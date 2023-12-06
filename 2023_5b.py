@@ -28,6 +28,8 @@ while line_number < len(lines):
             x, y = intervals[i]
             if x == y:
                 continue
+            # I just realized this isn't correct if x < s < y < s + l since it doesn't
+            # handle breaking up into 3 intervals rather than 1 or 2
             if overlaps(s, s+l, x, y):
                 print(s, s+l, x, y)
                 if s <= x:
